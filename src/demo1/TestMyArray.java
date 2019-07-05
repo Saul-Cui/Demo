@@ -29,5 +29,7 @@ public class TestMyArray {
         ma.show();
         ma.insert(5,10);
         ma.show();
+        ma.set(1, 100);
+        ma.show();
     }
 }
