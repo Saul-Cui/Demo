@@ -76,4 +76,13 @@ public class MyArray {
         newArr[index] = element;
         elements = newArr;
     }
+
+    public void set(int index, int element)
+    {
+        if (index < 0 || index > elements.length - 1)
+        {
+            throw new RuntimeException("下标越界");
+        }
+        elements[index] = element;
+    }
 }
