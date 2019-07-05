@@ -17,7 +17,7 @@ public class TestMyArray {
         ma.show();
         ma.add(97);
         ma.show();
-        //ma.delete(1);
+        ma.delete(1);
         ma.show();
         System.out.println(ma.get(0));
 
