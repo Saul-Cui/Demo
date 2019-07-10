@@ -85,4 +85,49 @@ public class MyArray {
         }
         elements[index] = element;
     }
+
+    public int search(int target)
+    {
+        int index = -1;
+        for (int i=0;i<elements.length;i++)
+        {
+            if (elements[i] == target)
+            {
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
+    public int binary(int target)
+    {
+        int index = -1;
+        int begin = 0;
+        int end = elements.length - 1;
+        int mid = (begin + end) / 2;
+
+        if (target > elements[end] || target < elements[0])
+        {
+            return index;
+        } else {
+            while (true)
+            {
+                if (elements[mid] == target)
+                {
+                    index = mid;
+                    break;
+                } else {
+                    if (elements[mid] > target)
+                    {
+                        end = mid - 1;
+                    } else {
+                        begin = mid + 1;
+                    }
+                    mid = (begin + end) / 2;
+                }
+            }
+        }
+        return index;
+    }
 }

@@ -5,27 +5,32 @@ public class TestBinarySearch {
     public static void main(String[] args)
     {
         int[] arr = new int[] {1,2,3,4,5,6,7,8,9};
-        int target = 8;
+        int target = 0;
 
         int begin = 0;
         int end = arr.length - 1;
         int mid = (begin + end) / 2;
 
         int index = -1;
-        while (true)
+        if (target > arr[end] || target < arr[0])
         {
-            if (arr[mid] == target)
+            index = -1;
+        } else {
+            while (true)
             {
-                index = mid;
-                break;
-            } else {
-                if (arr[mid] > target)
+                if (arr[mid] == target)
                 {
-                    end = mid - 1;
+                    index = mid;
+                    break;
                 } else {
-                    begin = mid + 1;
+                    if (arr[mid] > target)
+                    {
+                        end = mid - 1;
+                    } else {
+                        begin = mid + 1;
+                    }
+                    mid = (begin + end) / 2;
                 }
-                mid = (begin + end) / 2;
             }
         }
 
