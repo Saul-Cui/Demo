@@ -45,4 +45,18 @@ public class MyStack {
         //返回栈顶元素
         return element;
     }
+
+    public int peek()
+    {
+        if(elements.length == 0)
+        {
+            throw new RuntimeException("Stack is empty");
+        }
+        return elements[elements.length - 1];
+    }
+
+    public boolean isempty()
+    {
+        return 0 == elements.length;
+    }
 }
